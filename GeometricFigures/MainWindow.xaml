@@ -1,0 +1,27 @@
+﻿<Window x:Class="GeometricFigures.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GeometricFigures"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Canvas x:Name="SceneCanvas" Width="600" Height="400" Background="White" Margin="10"/>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10">
+            <Button x:Name="BtnDrawTriangle" Content="Треугольник" Click="BtnDrawTriangle_Click" Margin="5"/>
+            <Button x:Name="BtnDrawQuad" Content="Четырёхугольник" Click="BtnDrawQuad_Click" Margin="5"/>
+            <Button x:Name="BtnDrawSquare" Content="Квадрат" Click="BtnDrawSquare_Click" Margin="5"/>
+
+            <TextBlock Text="Сдвиг по X:" Margin="0, 10, 0, 0"/>
+            <TextBox x:Name="TxtShiftX" Width="100" Margin="5"/>
+
+            <TextBlock Text="Сдвиг по Y:" Margin="0, 10, 0, 0"/>
+            <TextBox x:Name="TxtShiftY" Width="100" Margin="5"/>
+
+            <Button x:Name="BtnMove" Content="Двигать" Click="BtnMove_Click" Margin="5.2, 0 , 5, 5"/>
+            <Button x:Name="BtnClear" Content="Очистить" Click="BtnClear_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>
