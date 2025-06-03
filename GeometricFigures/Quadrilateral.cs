@@ -35,5 +35,15 @@ namespace GeometricFigures
                 new Point2D(startPoint.GetX(), startPoint.GetY() + height)
             };
         }
+
+        public static Quadrilateral FromInput(string startInput, string width, string height)
+        {
+            var startParts = startInput.Split(',');
+            return new Quadrilateral(
+                Point2D.Parse(startInput),
+                double.Parse(width),
+                double.Parse(height)
+            );
+        }
     }
 }

@@ -22,5 +22,20 @@ namespace GeometricFigures
 
         public void AddX(double dx) => x += dx;
         public void AddY(double dy) => y += dy;
+
+        public static Point2D Parse(string input)
+        {
+            var parts = input.Split(',');
+            if (parts.Length != 2)
+                throw new FormatException("Координаты точки должны быть в формате X,Y");
+
+            if (!double.TryParse(parts[0], out double x))
+                throw new FormatException("Некорректное значение координаты X");
+
+            if (!double.TryParse(parts[1], out double y))
+                throw new FormatException("Некорректное значение координаты Y");
+
+            return new Point2D(x, y);
+        }
     }
 }

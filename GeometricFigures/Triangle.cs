@@ -25,5 +25,20 @@ namespace GeometricFigures
         }
 
         public IEnumerable<Point2D> GetPoints() => new[] { p1, p2, p3 };
+
+        public static Triangle FromInput(string p1Input, string p2Input, string p3Input)
+        {
+            Point2D ParsePoint(string input)
+            {
+                var parts = input.Split(',');
+                if (parts.Length != 2) throw new ArgumentException("Некорректный формат точки");
+                return new Point2D(int.Parse(parts[0]), int.Parse(parts[1]));
+            }
+            return new Triangle(
+                Point2D.Parse(p1Input),
+                Point2D.Parse(p2Input),
+                Point2D.Parse(p3Input)
+            );
+        }
     }
 }
