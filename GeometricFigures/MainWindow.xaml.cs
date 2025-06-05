@@ -59,6 +59,10 @@ namespace GeometricFigures
             }
 
             ClearCanvas();
+
+            currentQuad = null;
+            currentSquare = null;
+
             currentTriangle = ChkManualInput.IsChecked.Value
             ? Triangle.FromInput(TxtTriP1.Text, TxtTriP2.Text, TxtTriP3.Text)
             : new Triangle(
@@ -88,6 +92,10 @@ namespace GeometricFigures
             }
 
             ClearCanvas();
+
+            currentTriangle = null;
+            currentSquare = null;
+
             currentQuad = ChkManualInput.IsChecked.Value
             ? Quadrilateral.FromInput(TxtQuadStart.Text, TxtQuadWidth.Text, TxtQuadHeight.Text)
             : new Quadrilateral(
@@ -118,6 +126,10 @@ namespace GeometricFigures
             }
 
             ClearCanvas();
+
+            currentTriangle = null;
+            currentQuad = null;
+
             currentSquare = ChkManualInput.IsChecked.Value
             ? Square.FromInput(TxtSquareStart.Text, TxtSquareSide.Text)
             : new Square(
@@ -156,7 +168,13 @@ namespace GeometricFigures
             }
         }
 
-        private void BtnClear_Click(object sender, RoutedEventArgs e) => ClearCanvas();
+        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        {
+            ClearCanvas();
+            currentTriangle = null;
+            currentQuad = null;
+            currentSquare = null;
+        }
 
         private bool TryValidateInput(out string error)
         {
